@@ -1,0 +1,17 @@
+.bbutton {
+    -webkit-appearance: none;
+    border: none;
+    outline: none;
+    color: red;
+    float: right;
+    cursor: pointer;
+    font-size: 18px;
+    width: 25px;
+    height: 25px;
+    margin-top: 20px;
+    margin-left: 500px;
+    background: url(../img/cross2.png);
+  }
+  .ddisplay{
+      display: flex;
+  }
