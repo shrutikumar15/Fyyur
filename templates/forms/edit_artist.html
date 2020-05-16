@@ -1,0 +1,120 @@
+{% extends 'layouts/main.html' %}
+{% block title %}Edit Artist{% endblock %}
+{% block content %}
+<div class="form-wrapper">
+  <form class="form" method="post" id="form">
+    <h3 class="form-heading">Edit artist <em>{{ artist.name }}</em>
+      <a href="{{ url_for('index') }}" title="Back to homepage"><i class="fa fa-home pull-right"></i></a>
+    </h3>
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input autofocus value={{artist.name}} class="form-control" name="name" type="text" />
+    </div>
+    <div class="form-group">
+      <label>City & State</label>
+      <div class="form-inline">
+        <div class="form-group">
+          <input autofocus value={{artist.city}} class="form-control" name="city" type="text" />
+        </div>
+        <div class="form-group">
+          <select autofocus class="form-control" name="state">
+            <option value="AL" {% if artist.state=="AL" %} selected="selected" {% endif %}>AL</option>
+            <option value="AK" {% if artist.state=="AK" %} selected="selected" {% endif %}>AK</option>
+            <option value="AZ" {% if artist.state=="AZ" %} selected="selected" {% endif %}>AZ</option>
+            <option value="AR" {% if artist.state=="AR" %} selected="selected" {% endif %}>AR</option>
+            <option value="CA" {% if artist.state=="CA" %} selected="selected" {% endif %}>CA</option>
+            <option value="CO" {% if artist.state=="CO" %} selected="selected" {% endif %}>CO</option>
+            <option value="CT" {% if artist.state=="CT" %} selected="selected" {% endif %}>CT</option>
+            <option value="DE" {% if artist.state=="DE" %} selected="selected" {% endif %}>DE</option>
+            <option value="DC" {% if artist.state=="DC" %} selected="selected" {% endif %}>DC</option>
+            <option value="FL" {% if artist.state=="FL" %} selected="selected" {% endif %}>FL</option>
+            <option value="GA" {% if artist.state=="GA" %} selected="selected" {% endif %}>GA</option>
+            <option value="HI" {% if artist.state=="HI" %} selected="selected" {% endif %}>HI</option>
+            <option value="ID" {% if artist.state=="AL" %} selected="selected" {% endif %}>ID</option>
+            <option value="IL" {% if artist.state=="IL" %} selected="selected" {% endif %}>IL</option>
+            <option value="IN" {% if artist.state=="IN" %} selected="selected" {% endif %}>IN</option>
+            <option value="IA" {% if artist.state=="IA" %} selected="selected" {% endif %}>IA</option>
+            <option value="KS" {% if artist.state=="KS" %} selected="selected" {% endif %}>KS</option>
+            <option value="KY" {% if artist.state=="KY" %} selected="selected" {% endif %}>KY</option>
+            <option value="LA" {% if artist.state=="LA" %} selected="selected" {% endif %}>LA</option>
+            <option value="ME" {% if artist.state=="ME" %} selected="selected" {% endif %}>ME</option>
+            <option value="MT" {% if artist.state=="MT" %} selected="selected" {% endif %}>MT</option>
+            <option value="NE" {% if artist.state=="NE" %} selected="selected" {% endif %}>NE</option>
+            <option value="NV" {% if artist.state=="NV" %} selected="selected" {% endif %}>NV</option>
+            <option value="NH" {% if artist.state=="NH" %} selected="selected" {% endif %}>NH</option>
+            <option value="NJ" {% if artist.state=="NJ" %} selected="selected" {% endif %}>NJ</option>
+            <option value="NM" {% if artist.state=="NM" %} selected="selected" {% endif %}>NM</option>
+            <option value="NY" {% if artist.state=="NY" %} selected="selected" {% endif %}>NY</option>
+            <option value="NC" {% if artist.state=="NC" %} selected="selected" {% endif %}>NC</option>
+            <option value="ND" {% if artist.state=="ND" %} selected="selected" {% endif %}>ND</option>
+            <option value="OH" {% if artist.state=="OH" %} selected="selected" {% endif %}>OH</option>
+            <option value="OK" {% if artist.state=="OK" %} selected="selected" {% endif %}>OK</option>
+            <option value="OR" {% if artist.state=="OR" %} selected="selected" {% endif %}>OR</option>
+            <option value="MD" {% if artist.state=="MD" %} selected="selected" {% endif %}>MD</option>
+            <option value="MA" {% if artist.state=="MA" %} selected="selected" {% endif %}>MA</option>
+            <option value="MI" {% if artist.state=="MI" %} selected="selected" {% endif %}>MI</option>
+            <option value="MN" {% if artist.state=="MN" %} selected="selected" {% endif %}>MN</option>
+            <option value="MS" {% if artist.state=="MS" %} selected="selected" {% endif %}>MS</option>
+            <option value="MO" {% if artist.state=="MO" %} selected="selected" {% endif %}>MO</option>
+            <option value="PA" {% if artist.state=="PA" %} selected="selected" {% endif %}>PA</option>
+            <option value="RI" {% if artist.state=="RI" %} selected="selected" {% endif %}>RI</option>
+            <option value="SC" {% if artist.state=="SC" %} selected="selected" {% endif %}>SC</option>
+            <option value="SD" {% if artist.state=="SD" %} selected="selected" {% endif %}>SD</option>
+            <option value="TN" {% if artist.state=="TN" %} selected="selected" {% endif %}>TN</option>
+            <option value="TX" {% if artist.state=="TX" %} selected="selected" {% endif %}>TX</option>
+            <option value="UT" {% if artist.state=="UT" %} selected="selected" {% endif %}>UT</option>
+            <option value="VT" {% if artist.state=="VT" %} selected="selected" {% endif %}>VT</option>
+            <option value="VA" {% if artist.state=="VA" %} selected="selected" {% endif %}>VA</option>
+            <option value="WA" {% if artist.state=="WA" %} selected="selected" {% endif %}>WA</option>
+            <option value="WV" {% if artist.state=="WV" %} selected="selected" {% endif %}>WV</option>
+            <option value="WI" {% if artist.state=="WI" %} selected="selected" {% endif %}>WI</option>
+            <option value="WY" {% if artist.state=="WY" %} selected="selected" {% endif %}>WY</option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="phone">Phone</label>
+      <input autofocus value={{artist.phone}} class="form-control" name="phone" type="text" />
+    </div>
+    <div class="form-group">
+      <label for="genres">Genres</label>
+      <small>Ctrl+Click to select multiple</small>
+      <select autofocus class="form-control" name="genres" multiple>
+        <option value="Alternative" {% if "Alternative" in artist.genres %} selected="selected" {% endif %}>Alternative</option>
+        <option value="Blues" {% if "Blues" in artist.genres %} selected="selected" {% endif %}>Blues</option>
+        <option value="Classical" {% if "Classical" in artist.genres %} selected="selected" {% endif %}>Classical</option>
+        <option value="Country" {% if "Country" in artist.genres %} selected="selected" {% endif %}>Country</option>
+        <option value="Electronic" {% if "Electronic" in artist.genres %} selected="selected" {% endif %}>Electronic</option>
+        <option value="Folk" {% if "Folk" in artist.genres %} selected="selected" {% endif %}>Folk</option>
+        <option value="Funk" {% if "Funk" in artist.genres %} selected="selected" {% endif %}>Funk</option>
+        <option value="Hip-Hop" {% if 'Hip-Hop' in artist.genres %} selected="selected" {% endif %}>Hip-Hop</option>
+        <option value="Heavy Metal" {% if "Heavy Metal" in artist.genres %} selected="selected" {% endif %}>Heavy Metal</option>
+        <option value="Instrumental" {% if "Instrumental" in artist.genres %} selected="selected" {% endif %}>Instrumental</option>
+        <option value="Jazz" {% if "Jazz" in artist.genres %} selected="selected" {% endif %}>Jazz</option>
+        <option value="Musical Theatre" {% if "Musical Theatre" in artist.genres %} selected="selected" {% endif %}>Musical Theatre</option>
+        <option value="Pop" {% if "Pop" in artist.genres %} selected="selected" {% endif %}>Pop</option>
+        <option value="Punk" {% if "Punk" in artist.genres %} selected="selected" {% endif %}>Punk</option>
+        <option value="R&amp;B" {% if "R&B" in artist.genres %} selected="selected" {% endif %}>R&amp;B</option>
+        <option value="Reggae" {% if "Reggae" in artist.genres %} selected="selected" {% endif %}>Reggae</option>
+        <option value="Rock n Roll" {% if "Rock n Roll" in artist.genres %} selected="selected" {% endif %}>Rock n Roll</option>
+        <option value="Soul" {% if "Soul" in artist.genres %} selected="selected" {% endif %}>Soul</option>
+        <option value="Other" {% if "Other" in artist.genres %} selected="selected" {% endif %}>Other</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="facebook_link">Facebook Link</label>
+      <input autofocus value={{artist.facebook_link}} class="form-control" name="facebook_link" type="text" />
+    </div>
+    <div class="form-group">
+      <label for="website_link">Website Link</label>
+      <input autofocus value={{artist.website_link}} class="form-control" name="website_link" type="text" />
+    </div>
+    <div class="form-group">
+      <label for="image_link">Image Link</label>
+      <input autofocus value={{artist.image_link}} class="form-control" name="image_link" type="text" />
+    </div>
+    <input type="submit" value="Edit Artist" class="btn btn-primary btn-lg btn-block">
+  </form>
+</div>
+{% endblock %}

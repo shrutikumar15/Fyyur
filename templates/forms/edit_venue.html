@@ -1,0 +1,124 @@
+{% extends 'layouts/main.html' %} {% block title %}Edit Venue{% endblock %} {%
+block content %}
+<div class="form-wrapper">
+  <form class="form" method="post" action="/venues/{{venue.id}}/edit">
+    <h3 class="form-heading">
+      Edit venue <em>{{ venue.name }}</em>
+      <a href="{{ url_for('index') }}" title="Back to homepage"><i class="fa fa-home pull-right"></i></a>
+    </h3>
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input autofocus value={{venue.name}} class="form-control" name="name" type="text" />
+    </div>
+    <div class="form-group">
+      <label>City & State</label>
+      <div class="form-inline">
+        <div class="form-group">
+          <input autofocus value={{venue.city}} class="form-control" name="city" type="text" />
+        </div>
+        <div class="form-group">
+          <select autofocus class="form-control" name="state">
+            <option value="AL" {% if venue.state=="AL" %} selected="selected" {% endif %}>AL</option>
+            <option value="AK" {% if venue.state=="AK" %} selected="selected" {% endif %}>AK</option>
+            <option value="AZ" {% if venue.state=="AZ" %} selected="selected" {% endif %}>AZ</option>
+            <option value="AR" {% if venue.state=="AR" %} selected="selected" {% endif %}>AR</option>
+            <option value="CA" {% if venue.state=="CA" %} selected="selected" {% endif %}>CA</option>
+            <option value="CO" {% if venue.state=="CO" %} selected="selected" {% endif %}>CO</option>
+            <option value="CT" {% if venue.state=="CT" %} selected="selected" {% endif %}>CT</option>
+            <option value="DE" {% if venue.state=="DE" %} selected="selected" {% endif %}>DE</option>
+            <option value="DC" {% if venue.state=="DC" %} selected="selected" {% endif %}>DC</option>
+            <option value="FL" {% if venue.state=="FL" %} selected="selected" {% endif %}>FL</option>
+            <option value="GA" {% if venue.state=="GA" %} selected="selected" {% endif %}>GA</option>
+            <option value="HI" {% if venue.state=="HI" %} selected="selected" {% endif %}>HI</option>
+            <option value="ID" {% if venue.state=="AL" %} selected="selected" {% endif %}>ID</option>
+            <option value="IL" {% if venue.state=="IL" %} selected="selected" {% endif %}>IL</option>
+            <option value="IN" {% if venue.state=="IN" %} selected="selected" {% endif %}>IN</option>
+            <option value="IA" {% if venue.state=="IA" %} selected="selected" {% endif %}>IA</option>
+            <option value="KS" {% if venue.state=="KS" %} selected="selected" {% endif %}>KS</option>
+            <option value="KY" {% if venue.state=="KY" %} selected="selected" {% endif %}>KY</option>
+            <option value="LA" {% if venue.state=="LA" %} selected="selected" {% endif %}>LA</option>
+            <option value="ME" {% if venue.state=="ME" %} selected="selected" {% endif %}>ME</option>
+            <option value="MT" {% if venue.state=="MT" %} selected="selected" {% endif %}>MT</option>
+            <option value="NE" {% if venue.state=="NE" %} selected="selected" {% endif %}>NE</option>
+            <option value="NV" {% if venue.state=="NV" %} selected="selected" {% endif %}>NV</option>
+            <option value="NH" {% if venue.state=="NH" %} selected="selected" {% endif %}>NH</option>
+            <option value="NJ" {% if venue.state=="NJ" %} selected="selected" {% endif %}>NJ</option>
+            <option value="NM" {% if venue.state=="NM" %} selected="selected" {% endif %}>NM</option>
+            <option value="NY" {% if venue.state=="NY" %} selected="selected" {% endif %}>NY</option>
+            <option value="NC" {% if venue.state=="NC" %} selected="selected" {% endif %}>NC</option>
+            <option value="ND" {% if venue.state=="ND" %} selected="selected" {% endif %}>ND</option>
+            <option value="OH" {% if venue.state=="OH" %} selected="selected" {% endif %}>OH</option>
+            <option value="OK" {% if venue.state=="OK" %} selected="selected" {% endif %}>OK</option>
+            <option value="OR" {% if venue.state=="OR" %} selected="selected" {% endif %}>OR</option>
+            <option value="MD" {% if venue.state=="MD" %} selected="selected" {% endif %}>MD</option>
+            <option value="MA" {% if venue.state=="MA" %} selected="selected" {% endif %}>MA</option>
+            <option value="MI" {% if venue.state=="MI" %} selected="selected" {% endif %}>MI</option>
+            <option value="MN" {% if venue.state=="MN" %} selected="selected" {% endif %}>MN</option>
+            <option value="MS" {% if venue.state=="MS" %} selected="selected" {% endif %}>MS</option>
+            <option value="MO" {% if venue.state=="MO" %} selected="selected" {% endif %}>MO</option>
+            <option value="PA" {% if venue.state=="PA" %} selected="selected" {% endif %}>PA</option>
+            <option value="RI" {% if venue.state=="RI" %} selected="selected" {% endif %}>RI</option>
+            <option value="SC" {% if venue.state=="SC" %} selected="selected" {% endif %}>SC</option>
+            <option value="SD" {% if venue.state=="SD" %} selected="selected" {% endif %}>SD</option>
+            <option value="TN" {% if venue.state=="TN" %} selected="selected" {% endif %}>TN</option>
+            <option value="TX" {% if venue.state=="TX" %} selected="selected" {% endif %}>TX</option>
+            <option value="UT" {% if venue.state=="UT" %} selected="selected" {% endif %}>UT</option>
+            <option value="VT" {% if venue.state=="VT" %} selected="selected" {% endif %}>VT</option>
+            <option value="VA" {% if venue.state=="VA" %} selected="selected" {% endif %}>VA</option>
+            <option value="WA" {% if venue.state=="WA" %} selected="selected" {% endif %}>WA</option>
+            <option value="WV" {% if venue.state=="WV" %} selected="selected" {% endif %}>WV</option>
+            <option value="WI" {% if venue.state=="WI" %} selected="selected" {% endif %}>WI</option>
+            <option value="WY" {% if venue.state=="WY" %} selected="selected" {% endif %}>WY</option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="address">Address</label>
+      <input autofocus value={{venue.address}} class="form-control" name="address" type="text" />
+    </div>
+    <div class="form-group">
+      <label for="phone">Phone</label>
+      <input autofocus value={{venue.phone}} class="form-control" name="phone" type="text" />
+    </div>
+    <div class="form-group">
+      <label for="genres">Genres</label>
+      <small>Ctrl+Click to select multiple</small>
+      <select autofocus class="form-control" name="genres" multiple>
+        <option value="Alternative" {% if "Alternative" in venue.genres %} selected="selected" {% endif %}>Alternative</option>
+        <option value="Blues" {% if "Blues" in venue.genres %} selected="selected" {% endif %}>Blues</option>
+        <option value="Classical" {% if "Classical" in venue.genres %} selected="selected" {% endif %}>Classical</option>
+        <option value="Country" {% if "Country" in venue.genres %} selected="selected" {% endif %}>Country</option>
+        <option value="Electronic" {% if "Electronic" in venue.genres %} selected="selected" {% endif %}>Electronic</option>
+        <option value="Folk" {% if "Folk" in venue.genres %} selected="selected" {% endif %}>Folk</option>
+        <option value="Funk" {% if "Funk" in venue.genres %} selected="selected" {% endif %}>Funk</option>
+        <option value="Hip-Hop" {% if 'Hip-Hop' in venue.genres %} selected="selected" {% endif %}>Hip-Hop</option>
+        <option value="Heavy Metal" {% if "Heavy Metal" in venue.genres %} selected="selected" {% endif %}>Heavy Metal</option>
+        <option value="Instrumental" {% if "Instrumental" in venue.genres %} selected="selected" {% endif %}>Instrumental</option>
+        <option value="Jazz" {% if "Jazz" in venue.genres %} selected="selected" {% endif %}>Jazz</option>
+        <option value="Musical Theatre" {% if "Musical Theatre" in venue.genres %} selected="selected" {% endif %}>Musical Theatre</option>
+        <option value="Pop" {% if "Pop" in venue.genres %} selected="selected" {% endif %}>Pop</option>
+        <option value="Punk" {% if "Punk" in venue.genres %} selected="selected" {% endif %}>Punk</option>
+        <option value="R&amp;B" {% if "R&B" in venue.genres %} selected="selected" {% endif %}>R&amp;B</option>
+        <option value="Reggae" {% if "Reggae" in venue.genres %} selected="selected" {% endif %}>Reggae</option>
+        <option value="Rock n Roll" {% if "Rock n Roll" in venue.genres %} selected="selected" {% endif %}>Rock n Roll</option>
+        <option value="Soul" {% if "Soul" in venue.genres %} selected="selected" {% endif %}>Soul</option>
+        <option value="Other" {% if "Other" in venue.genres %} selected="selected" {% endif %}>Other</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="facebook_link">Facebook Link</label>
+      <input autofocus value={{venue.facebook_link}} class="form-control" name="facebook_link" type="text" />
+    </div>
+    <div class="form-group">
+      <label for="website_link">Website Link</label>
+      <input autofocus value={{venue.website_link}} class="form-control" name="website_link" type="text" />
+    </div>
+    <div class="form-group">
+      <label for="image_link">Image Link</label>
+      <input autofocus value={{venue.image_link}} class="form-control" name="image_link" type="text" />
+    </div>
+    <input type="submit" value="Edit Venue" class="btn btn-primary btn-lg btn-block" />
+  </form>
+</div>
+{% endblock %}
