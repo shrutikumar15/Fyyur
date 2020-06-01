@@ -21,7 +21,7 @@ First, [install Flask](http://flask.pocoo.org/docs/1.0/installation/#install-fla
 
   ```
   $ cd ~
-  $ sudo pip3 install Flask
+  $ sudo pip install Flask
   ```
 
 To start and run the local development server,
@@ -42,7 +42,7 @@ To start and run the local development server,
   ```
   $ export FLASK_APP=myapp
   $ export FLASK_ENV=development # enables debug mode
-  $ python3 app.py
+  $ python app.py
   ```
 
 4. Navigate to Home page [http://localhost:5000](http://localhost:5000)
